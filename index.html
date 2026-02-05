@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Maison Elrawabi M'sila</title>
+
+<!-- Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --ink:#151515;
+  --muted:#5b5b5b;
+  --purple:#3f0a63;
+  --purple2:#5b1c86;
+  --gold:#d4af37;
+  --gold2:#f2d06b;
+  --line:rgba(0,0,0,.08);
+  --shadow:0 18px 45px rgba(0,0,0,.08);
+  --shadow2:0 10px 25px rgba(0,0,0,.06);
+  --green:#25D366;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Cairo", system-ui, -apple-system, Segoe UI, sans-serif;
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(91,28,134,.08), transparent 60%),
+    radial-gradient(700px 450px at 90% 10%, rgba(212,175,55,.10), transparent 55%),
+    linear-gradient(#fff, #fff);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+a{color:inherit}
+.container{max-width:1100px; margin:0 auto; padding:0 16px;}
+
+/* ===== Top nav ===== */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 0;
+}
+.brand-mini{
+  display:flex; gap:10px; align-items:center;
+}
+.brand-mini img{
+  width:38px; height:38px; border-radius:10px; object-fit:cover;
+  box-shadow:0 10px 25px rgba(63,10,99,.18);
+}
+.brand-mini .txt{line-height:1.1}
+.brand-mini .txt b{display:block; font-size:14px}
+.brand-mini .txt span{display:block; font-size:12px; color:var(--muted)}
+.menu{
+  display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+}
+.menu a{
+  text-decoration:none; font-size:13px; color:#2b2b2b;
+  padding:8px 10px; border-radius:12px;
+  transition:.2s;
+}
+.menu a:hover{background:rgba(63,10,99,.06)}
+.cta{
+  background:var(--green);
+  color:#fff !important;
+  padding:9px 14px !important;
+  border-radius:14px !important;
+  box-shadow:0 12px 26px rgba(37,211,102,.25);
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  padding:34px 0 18px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:18px;
+  align-items:stretch;
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr; }
+  .menu{display:none}
+}
+
+.ramadan-card{
+  position:relative;
+  background:linear-gradient(135deg, rgba(63,10,99,.06), rgba(212,175,55,.08));
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:18px;
+  padding:18px 18px 16px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+/* lanterns layer */
+.lanterns{
+  position:absolute; inset:-30px -30px auto -30px;
+  height:170px;
+  pointer-events:none;
+  opacity:.9;
+}
+.lantern{
+  position:absolute; top:0;
+  width:64px; height:120px;
+  filter: drop-shadow(0 18px 18px rgba(0,0,0,.15));
+  animation: sway 3.8s ease-in-out infinite;
+  transform-origin: top center;
+}
+.lantern:nth-child(1){left:6%; animation-duration:4.4s; opacity:.95}
+.lantern:nth-child(2){left:22%; top:8px; width:58px; height:110px; animation-duration:3.7s; opacity:.85}
+.lantern:nth-child(3){right:26%; top:6px; width:60px; height:112px; animation-duration:4.9s; opacity:.90}
+.lantern:nth-child(4){right:7%; width:66px; height:124px; animation-duration:3.9s; opacity:.95}
+
+@keyframes sway{
+  0%,100%{transform:rotate(-6deg) translateY(0)}
+  50%{transform:rotate(6deg) translateY(2px)}
+}
+
+.lantern svg{width:100%; height:100%}
+.glow{
+  animation: glow 2.2s ease-in-out infinite;
+}
+@keyframes glow{
+  0%,100%{opacity:.75}
+  50%{opacity:1}
+}
+
+.ramadan-top{
+  display:flex; gap:14px; align-items:center; justify-content:space-between;
+  margin-top:70px;
+}
+.ramadan-top .texts{flex:1}
+.brand{
+  font-size:18px;
+  font-weight:800;
+  color:#000;
+}
+.ramadan{
+  font-size:26px;
+  font-weight:800;
+  color:var(--gold);
+  margin-top:4px;
+  letter-spacing:.2px;
+  text-shadow:0 10px 22px rgba(212,175,55,.15);
+}
+.logo-big{
+  width:120px; height:120px;
+  border-radius:18px;
+  object-fit:cover;
+  border:1px solid rgba(63,10,99,.12);
+  box-shadow:0 18px 40px rgba(63,10,99,.16);
+  background:#fff;
+}
+
+.hero-right{
+  background:linear-gradient(180deg,#ffffff, #fbf7ff);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow2);
+  padding:18px;
+}
+.hero-title{
+  font-size:26px; font-weight:800;
+  margin:4px 0 6px;
+  color:var(--purple);
+}
+.hero-subtitle{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+.meta{
+  margin-top:12px;
+  display:flex; gap:10px; flex-wrap:wrap;
+}
+.pill{
+  border:1px solid rgba(63,10,99,.12);
+  background:rgba(63,10,99,.04);
+  padding:8px 10px;
+  border-radius:14px;
+  font-size:13px;
+}
+.status{
+  font-weight:800;
+}
+.badge-open{color:#128a3a}
+.badge-closed{color:#b00020}
+
+.side-actions{
+  margin-top:14px;
+  display:flex; gap:10px; flex-wrap:wrap;
+}
+.btn{
+  border:none;
+  cursor:pointer;
+  padding:10px 12px;
+  border-radius:14px;
+  font-family:inherit;
+  font-weight:800;
+  font-size:14px;
+  transition:.2s;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.btn-primary{
+  background:var(--green);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(37,211,102,.25);
+}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-ghost{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+}
+.btn-ghost:hover{background:rgba(63,10,99,.04)}
+
+.location{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ===== Layout for filter + products ===== */
+.section{
+  padding:22px 0;
+}
+.section-title{
+  display:flex; align-items:baseline; justify-content:space-between; gap:10px;
+}
+.section-title h2{
+  margin:0;
+  font-size:18px;
+  color:var(--purple);
+}
+.section-title p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.shop-grid{
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  gap:16px;
+  margin-top:14px;
+}
+@media (max-width:900px){
+  .shop-grid{grid-template-columns:1fr}
+}
+
+.filter-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow2);
+  padding:14px;
+  position:sticky;
+  top:66px;
+  height:fit-content;
+}
+.filter-card h3{
+  margin:2px 0 10px;
+  font-size:15px;
+  color:var(--purple);
+}
+.chips{
+  display:flex; gap:8px; flex-wrap:wrap;
+}
+.chip{
+  border:1px solid rgba(63,10,99,.16);
+  background:rgba(63,10,99,.05);
+  color:#2b2b2b;
+  padding:8px 10px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:13px;
+}
+.chip.active{
+  background:var(--purple);
+  border-color:var(--purple);
+  color:#fff;
+}
+.small-note{
+  margin-top:10px;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+  border-top:1px dashed rgba(0,0,0,.10);
+  padding-top:10px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow2);
+  padding:14px;
+  overflow:hidden;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-2px)}
+.thumb{
+  width:100%;
+  height:150px;
+  border-radius:14px;
+  background:linear-gradient(135deg, rgba(63,10,99,.08), rgba(212,175,55,.10));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:rgba(63,10,99,.6);
+  letter-spacing:.3px;
+}
+.card h4{
+  margin:10px 0 6px;
+  font-size:15px;
+  color:var(--purple);
+}
+.kv{
+  display:grid;
+  gap:6px;
+  color:#3c3c3c;
+  font-size:13px;
+}
+.kv span{color:var(--muted)}
+.price{
+  margin-top:8px;
+  font-weight:900;
+  color:#000;
+  font-size:14px;
+}
+.card-actions{
+  margin-top:10px;
+  display:flex; gap:10px; flex-wrap:wrap;
+}
+.btn-mini{
+  padding:9px 10px;
+  border-radius:14px;
+  font-size:13px;
+  font-weight:900;
+}
+.btn-outline{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.10);
+}
+.btn-wa{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}
+
+/* ===== Delivery ===== */
+.delivery{
+  background:linear-gradient(135deg, rgba(63,10,99,.06), rgba(255,255,255,1));
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.delivery-wrap{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:16px;
+  align-items:center;
+  padding:18px 0;
+}
+@media (max-width:900px){
+  .delivery-wrap{grid-template-columns:1fr}
+}
+.delivery img{
+  width:100%;
+  max-width:420px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow2);
+}
+.delivery h3{
+  margin:0 0 8px;
+  color:var(--purple);
+}
+.delivery p{
+  margin:6px 0;
+  color:#3f3f3f;
+  line-height:1.7;
+}
+.insta-btn{
+  margin-top:10px;
+  background:#E1306C;
+  color:#fff;
+  border:none;
+  padding:10px 12px;
+  border-radius:14px;
+  text-decoration:none;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-weight:900;
+  box-shadow:0 14px 30px rgba(225,48,108,.18);
+}
+
+/* ===== Contact ===== */
+.contact{
+  padding:18px 0 10px;
+}
+.social{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(180px,1fr));
+  gap:12px;
+}
+@media (max-width:900px){
+  .social{grid-template-columns:1fr}
+}
+.social a{
+  text-decoration:none;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:12px;
+  box-shadow:var(--shadow2);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  color:var(--purple);
+}
+.icon{
+  width:40px; height:40px; border-radius:14px;
+  display:grid; place-items:center;
+  background:rgba(63,10,99,.06);
+  border:1px solid rgba(63,10,99,.10);
+}
+footer{
+  margin-top:16px;
+  background:var(--purple);
+  color:#fff;
+  text-align:center;
+  padding:14px 10px;
+}
+
+/* ===== Modal (Product details) ===== */
+.modal{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:999;
+}
+.modal.open{display:flex;}
+.modal-card{
+  width:min(980px, 100%);
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 28px 70px rgba(0,0,0,.20);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.25);
+}
+.modal-head{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 14px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(63,10,99,.04), rgba(212,175,55,.06));
+}
+.modal-head b{color:var(--purple)}
+.close{
+  border:none; background:#fff;
+  border:1px solid rgba(0,0,0,.10);
+  width:38px; height:38px;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:900;
+}
+.modal-body{
+  display:grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap:0;
+}
+@media (max-width:900px){
+  .modal-body{grid-template-columns:1fr}
+}
+.gallery{
+  padding:14px;
+  border-left:1px solid var(--line);
+}
+@media (max-width:900px){
+  .gallery{border-left:none; border-bottom:1px solid var(--line)}
+}
+.big{
+  height:320px;
+  border-radius:18px;
+  background:linear-gradient(135deg, rgba(63,10,99,.10), rgba(212,175,55,.12));
+  display:grid; place-items:center;
+  font-weight:900;
+  color:rgba(63,10,99,.55);
+}
+.thumbs{
+  margin-top:10px;
+  display:flex; gap:8px; flex-wrap:wrap;
+}
+.thumb2{
+  width:70px; height:58px;
+  border-radius:14px;
+  background:linear-gradient(135deg, rgba(63,10,99,.08), rgba(212,175,55,.10));
+  border:1px solid rgba(0,0,0,.06);
+}
+.details{
+  padding:14px;
+}
+.details h3{margin:0 0 8px; color:var(--purple)}
+.grid{
+  display:grid; gap:8px;
+  color:#2b2b2b;
+  font-size:14px;
+}
+.grid div span{color:var(--muted)}
+.actions{
+  margin-top:12px;
+  display:flex; gap:10px; flex-wrap:wrap;
+}
+.small{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:10px;
+  line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="container nav-inner">
+    <div class="brand-mini">
+      <img src="أصول/IMG_20260205_152140_361.jpg" alt="logo">
+      <div class="txt">
+        <b>Maison Elrawabi M'sila</b>
+        <span>ملابس نسائية محتشمة</span>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="#home">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#delivery">التوصيل</a>
+      <a href="#reviews">آراء الزبائن</a>
+      <a href="#faq">أسئلة</a>
+      <a href="#contact">اتصل بنا</a>
+      <a class="cta" href="https://wa.me/213778595793" target="_blank">اطلبي الآن</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="ramadan-card">
+      <div class="lanterns" aria-hidden="true">
+        <!-- 4 lanterns -->
+        <div class="lantern">
+          <svg viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 0v18" stroke="#9a7b1c" stroke-width="3"/>
+            <path class="glow" d="M22 22h20l-3 10H25l-3-10Z" fill="#d4af37"/>
+            <path d="M16 34c3-10 29-10 32 0l-6 70c-1 10-19 10-20 0l-6-70Z" fill="#3f0a63"/>
+            <path class="glow" d="M22 52c6-12 14-12 20 0-6 9-14 9-20 0Z" fill="#f2d06b"/>
+            <path d="M24 108h16v8H24v-8Z" fill="#d4af37"/>
+          </svg>
+        </div>
+        <div class="lantern">
+          <svg viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 0v16" stroke="#9a7b1c" stroke-width="3"/>
+            <path class="glow" d="M20 20h24l-3 10H23l-3-10Z" fill="#d4af37"/>
+            <path d="M14 32c3-10 33-10 36 0l-7 72c-1 10-21 10-22 0l-7-72Z" fill="#5b1c86"/>
+            <path class="glow" d="M22 52c6-12 14-12 20 0-6 9-14 9-20 0Z" fill="#f2d06b"/>
+            <path d="M24 108h16v8H24v-8Z" fill="#d4af37"/>
+          </svg>
+        </div>
+        <div class="lantern">
+          <svg viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 0v18" stroke="#9a7b1c" stroke-width="3"/>
+            <path class="glow" d="M22 22h20l-3 10H25l-3-10Z" fill="#d4af37"/>
+            <path d="M16 34c3-10 29-10 32 0l-6 70c-1 10-19 10-20 0l-6-70Z" fill="#3f0a63"/>
+            <path class="glow" d="M22 52c6-12 14-12 20 0-6 9-14 9-20 0Z" fill="#f2d06b"/>
+            <path d="M24 108h16v8H24v-8Z" fill="#d4af37"/>
+          </svg>
+        </div>
+        <div class="lantern">
+          <svg viewBox="0 0 64 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 0v16" stroke="#9a7b1c" stroke-width="3"/>
+            <path class="glow" d="M20 20h24l-3 10H23l-3-10Z" fill="#d4af37"/>
+            <path d="M14 32c3-10 33-10 36 0l-7 72c-1 10-21 10-22 0l-7-72Z" fill="#5b1c86"/>
+            <path class="glow" d="M22 52c6-12 14-12 20 0-6 9-14 9-20 0Z" fill="#f2d06b"/>
+            <path d="M24 108h16v8H24v-8Z" fill="#d4af37"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="ramadan-top">
+        <div class="texts">
+          <div class="brand">maison elrawabi m'sila</div>
+          <div class="ramadan">✨ تتمنى لكم رمضان مبارك ✨</div>
+        </div>
+        <img class="logo-big" src="أصول/IMG_20260205_152140_361.jpg" alt="logo">
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-title">أناقتك المحتشمة تَليق بكِ</div>
+      <p class="hero-subtitle">بيت ملابس نسائية محتشمة</p>
+
+      <div class="meta">
+        <div class="pill">⏰ <b>توقيت العمل:</b> 08:00 → 21:00</div>
+        <div class="pill status" id="openStatus">...</div>
+        <div class="pill">📍 بلدية عين الخضراء — ولاية المسيلة</div>
+      </div>
+
+      <div class="side-actions">
+        <a class="btn btn-primary" href="https://wa.me/213778595793" target="_blank">
+          <!-- WA icon -->
+          <span>💬</span> اطلبي على واتساب
+        </a>
+        <a class="btn btn-ghost" href="#products">🛍️ شاهدي المنتجات</a>
+      </div>
+
+      <div class="location">✨ تصفحي بسرعة — التصميم خفيف ويخدم حتى بالأنترنت الضعيف</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-title">
+      <h2>المنتجات</h2>
+      <p>فلترة سريعة + تفاصيل احترافية عند الضغط على أي منتج</p>
+    </div>
+
+    <div class="shop-grid">
+      <!-- Filter -->
+      <aside class="filter-card">
+        <h3>فلترة</h3>
+        <div class="chips">
+          <button class="chip active" data-filter="all">الكل</button>
+          <button class="chip" data-filter="abaya">عبايات</button>
+          <button class="chip" data-filter="dress">فساتين</button>
+          <button class="chip" data-filter="prayer">طقم الصلاة</button>
+        </div>
+
+        <div class="small-note">
+          ✅ عند الضغط على <b>تفاصيل</b> تفتح صفحة/نافذة احترافية فيها: صور، المقاس، الألوان، زر واتساب برسالة جاهزة.  
+        </div>
+      </aside>
+
+      <!-- Product grid -->
+      <div>
+        <div class="section-title" style="margin-top:2px">
+          <h2 style="font-size:16px">منتجات جديدة / الأكثر طلبًا</h2>
+          <p>اختيارات جاهزة للزبائن</p>
+        </div>
+
+        <div class="products" id="productsGrid">
+          <!-- Product 1 -->
+          <div class="card product prayer" data-id="p1">
+            <div class="thumb">طقم الصلاة</div>
+            <h4>طقم الصلاة — متوفر</h4>
+            <div class="kv">
+              <div><span>المقاس:</span> ستوندار</div>
+              <div><span>الألوان:</span> جميع الألوان</div>
+              <div><span>الحالة:</span> متوفر ✅</div>
+            </div>
+            <div class="price">السعر: حسب اللون/الموديل</div>
+            <div class="card-actions">
+              <button class="btn btn-mini btn-outline" onclick="openDetails('p1')">تفاصيل</button>
+              <button class="btn btn-mini btn-wa" onclick="orderNow('طقم الصلاة')">اطلبي واتساب</button>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="card product abaya" data-id="p2">
+            <div class="thumb">عباية</div>
+            <h4>عباية محتشمة</h4>
+            <div class="kv">
+              <div><span>المقاس:</span> ستوندار</div>
+              <div><span>الألوان:</span> أسود / بيج / موف</div>
+              <div><span>الحالة:</span> متوفر ✅</div>
+            </div>
+            <div class="price">السعر: عند الطلب</div>
+            <div class="card-actions">
+              <button class="btn btn-mini btn-outline" onclick="openDetails('p2')">تفاصيل</button>
+              <button class="btn btn-mini btn-wa" onclick="orderNow('عباية محتشمة')">اطلبي واتساب</button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="card product dress" data-id="p3">
+            <div class="thumb">فستان</div>
+            <h4>فستان محتشم</h4>
+            <div class="kv">
+              <div><span>المقاس:</span> S / M / L</div>
+              <div><span>الألوان:</span> حسب المتوفر</div>
+              <div><span>الحالة:</span> متوفر ✅</div>
+            </div>
+            <div class="price">السعر: عند الطلب</div>
+            <div class="card-actions">
+              <button class="btn btn-mini btn-outline" onclick="openDetails('p3')">تفاصيل</button>
+              <button class="btn btn-mini btn-wa" onclick="orderNow('فستان محتشم')">اطلبي واتساب</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="section delivery" id="delivery">
+  <div class="container delivery-wrap">
+    <div>
+      <h3>اطلب التوصيل (قريبًا)</h3>
+      <p>قريباً خدمة توصيل سريعة وآمنة عبر تطبيق (وصلت) — ترقبي الإعلان.</p>
+      <p>التوصيل قريباً بالشراكة مع <b>Waslet Delivery 28</b> — خدمة سريعة وآمنة.</p>
+
+      <a class="insta-btn" target="_blank"
+         href="https://www.instagram.com/waslet_?igsh=NnJpNDFoNDdxYWZ0">
+        تابع الصفحة
+      </a>
+    </div>
+
+    <div style="display:flex; justify-content:center;">
+      <img src="أصول/Screenshot_20260205-014325_1.png" alt="waslet">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS + FAQ (خفاف) -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-title">
+      <h2>آراء الزبائن</h2>
+      <p>قريبًا نضيف تقييمات وصور حقيقية</p>
+    </div>
+    <div class="products" style="margin-top:14px">
+      <div class="card">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <div class="kv">خدمة جميلة وتناسق في الموديلات ✅</div>
+      </div>
+      <div class="card">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <div class="kv">لباس محتشم وراقي 💜</div>
+      </div>
+      <div class="card">
+        <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+        <div class="kv">تجاوب سريع على واتساب 👌</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-title">
+      <h2>أسئلة</h2>
+      <p>أجوبة سريعة</p>
+    </div>
+    <div class="products" style="margin-top:14px">
+      <div class="card">
+        <h4>كيفاش نطلب؟</h4>
+        <div class="kv">اضغطي زر واتساب وابعثي رسالة باسم المنتج.</div>
+      </div>
+      <div class="card">
+        <h4>الألوان والمقاسات؟</h4>
+        <div class="kv">في تفاصيل المنتج تلقاي الألوان والمقاس، وإذا حبيتي نسقترحلك المتوفر.</div>
+      </div>
+      <div class="card">
+        <h4>وين المكان؟</h4>
+        <div class="kv">بلدية عين الخضراء — ولاية المسيلة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>اتصل بنا</h2>
+      <p>روابط مباشرة</p>
+    </div>
+
+    <div class="social" style="margin-top:14px">
+      <a target="_blank" href="https://www.facebook.com/rihab.la.96">
+        <span class="icon">f</span>
+        فيسبوك: maison elrawabi m'sila
+      </a>
+
+      <a target="_blank" href="https://www.instagram.com/maison.elrawabi.28?igsh=bzliaml2aTJkd2t1">
+        <span class="icon">⌁</span>
+        انستغرام: maison.elrawabi.28
+      </a>
+
+      <a target="_blank" href="https://wa.me/213778595793">
+        <span class="icon">☎</span>
+        اتصل الآن — +213 778 59 57 93
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+شكراً لكِ
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <b id="mTitle">تفاصيل المنتج</b>
+      <button class="close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="gallery">
+        <div class="big" id="mBig">صورة المنتج</div>
+        <div class="thumbs">
+          <div class="thumb2"></div>
+          <div class="thumb2"></div>
+          <div class="thumb2"></div>
+          <div class="thumb2"></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <h3 id="mName">—</h3>
+        <div class="grid" id="mInfo"></div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="mWaBtn">اطلبي على واتساب</button>
+          <button class="btn btn-ghost" onclick="closeModal()">رجوع</button>
+        </div>
+
+        <div class="small">
+          ✅ رسالة واتساب تكون جاهزة باسم المنتج — فقط اضغطي وارسلي.  
+          📍 الاستلام/الطلب: عين الخضراء — المسيلة.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== وقت العمل: 08:00 -> 21:00 ===== */
+(function(){
+  const now = new Date();
+  const hour = now.getHours();
+  const status = document.getElementById("openStatus");
+  if(hour >= 8 && hour < 21){
+    status.innerHTML = "مفتوح الآن ✅";
+    status.classList.add("badge-open");
+  }else{
+    status.innerHTML = "مغلق الآن ⛔";
+    status.classList.add("badge-closed");
+  }
+})();
+
+/* ===== واتساب ===== */
+function orderNow(product){
+  const msg = `السلام عليكم، حابة نطلب: ${product}\nالمكان: عين الخضراء - المسيلة`;
+  window.open("https://wa.me/213778595793?text=" + encodeURIComponent(msg), "_blank");
+}
+
+/* ===== فلترة ===== */
+const chips = document.querySelectorAll(".chip");
+const products = document.querySelectorAll(".product");
+
+chips.forEach(ch=>{
+  ch.addEventListener("click", ()=>{
+    chips.forEach(x=>x.classList.remove("active"));
+    ch.classList.add("active");
+    const f = ch.dataset.filter;
+
+    products.forEach(p=>{
+      if(f === "all") p.style.display = "block";
+      else p.style.display = p.classList.contains(f) ? "block" : "none";
+    });
+  });
+});
+
+/* ===== بيانات تفاصيل احترافية ===== */
+const productData = {
+  p1:{
+    name:"طقم الصلاة — متوفر",
+    size:"ستوندار",
+    colors:"جميع الألوان",
+    price:"حسب اللون/الموديل",
+    desc:"طقم صلاة محتشم بخامة مريحة، مناسب للاستعمال اليومي، وتنسيق راقي.",
+    waName:"طقم الصلاة"
+  },
+  p2:{
+    name:"عباية محتشمة",
+    size:"ستوندار",
+    colors:"أسود / بيج / موف",
+    price:"عند الطلب",
+    desc:"عباية محتشمة بتفاصيل بسيطة وأنيقة، تنسيق سهل مع كل الإطلالات.",
+    waName:"عباية محتشمة"
+  },
+  p3:{
+    name:"فستان محتشم",
+    size:"S / M / L",
+    colors:"حسب المتوفر",
+    price:"عند الطلب",
+    desc:"فستان محتشم مودرن، مناسب للمناسبات والخروج، بقصة أنيقة.",
+    waName:"فستان محتشم"
+  }
+};
+
+/* ===== فتح التفاصيل (Modal) ===== */
+function openDetails(id){
+  const d = productData[id];
+  if(!d) return;
+
+  document.getElementById("mTitle").textContent = "تفاصيل المنتج";
+  document.getElementById("mName").textContent = d.name;
+  document.getElementById("mBig").textContent = "معاينة المنتج";
+
+  document.getElementById("mInfo").innerHTML = `
+    <div><span>المقاس:</span> ${d.size}</div>
+    <div><span>الألوان:</span> ${d.colors}</div>
+    <div><span>السعر:</span> ${d.price}</div>
+    <div><span>وصف:</span> ${d.desc}</div>
+  `;
+
+  const waBtn = document.getElementById("mWaBtn");
+  waBtn.onclick = ()=> orderNow(d.waName);
+
+  document.getElementById("modal").classList.add("open");
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("open");
+}
+
+/* اغلاق عند الضغط خارج النافذة */
+document.getElementById("modal").addEventListener("click", (e)=>{
+  if(e.target.id === "modal") closeModal();
+});
+</script>
+
+</body>
+  </html>
